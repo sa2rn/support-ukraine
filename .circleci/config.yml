@@ -5,6 +5,6 @@ workflows:
   build-and-deploy:
     jobs:
       - node/run:
-          npm-run: lerna build
+          npm-run: npx lerna build
       - node/run:
-          npm-run: lerna publish
+          npm-run: npx lerna publish
