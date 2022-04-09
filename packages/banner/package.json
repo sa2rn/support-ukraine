@@ -10,7 +10,7 @@
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -c -w",
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "rollup": "^2.70.1",
