@@ -1,24 +1,8 @@
-const TRANSLATES = {
-  en: {
-    support: 'Support Ukraine',
-  },
-  ru: {
-    support: 'Поддержи Украину',
-  },
-  uk: {
-    support: 'Підтримай Україну',
-  },
-  pl: {
-    support: 'Wesprzyj Ukrainę',
-  },
-  sp: {
-    support: 'Apoya a Ucrania',
-  },
-};
+import locales from './locales.mjs';
 
 const FALLBACK_LANGUAGE = 'en';
 
-class SupportUkraine extends HTMLElement {
+export default class SupportUkraine extends HTMLElement {
   constructor() {
     super();
     const shadowRoot = this.attachShadow({ mode: 'open' });
@@ -27,11 +11,11 @@ class SupportUkraine extends HTMLElement {
 
   getLanguage() {
     const userLanguage = (this.getAttribute('lang') || navigator.language).slice(0, 2);
-    return TRANSLATES[userLanguage] ? userLanguage : FALLBACK_LANGUAGE;
+    return locales[userLanguage] ? userLanguage : FALLBACK_LANGUAGE;
   }
 
   __t(key) {
-    return TRANSLATES[this.getLanguage()][key];
+    return locales[this.getLanguage()][key];
   }
 
   getHtml() {
@@ -68,5 +52,3 @@ class SupportUkraine extends HTMLElement {
     `;
   }
 }
-
-window.customElements.define('support-ukraine', SupportUkraine);

@@ -3,17 +3,12 @@
   "version": "1.0.0",
   "homepage": "",
   "license": "ISC",
-  "main": "lib/banner.js",
-  "directories": {
-    "lib": "lib"
-  },
-  "files": [
-    "lib"
-  ],
+  "main": "dist/support-ukraine.js",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
+    "build": "rollup -c",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "devDependencies": {
