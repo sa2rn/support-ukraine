@@ -1,9 +1,9 @@
 {
-  "name": "@support-ukraine/banner",
+  "name": "support-ukraine-banner",
   "version": "1.0.0",
   "homepage": "",
   "license": "ISC",
-  "main": "dist/support-ukraine.js",
+  "main": "dist/main.js",
   "publishConfig": {
     "access": "public"
   },

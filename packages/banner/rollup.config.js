@@ -4,10 +4,10 @@ export default {
   input: 'src/index.mjs',
   output: [
     {
-      file: 'dist/support-ukraine.js',
+      file: 'dist/main.js',
     },
     {
-      file: 'dist/support-ukraine.min.js',
+      file: 'dist/main.min.js',
       plugins: [terser()],
     },
   ],
