@@ -1,0 +1,23 @@
+{
+  "name": "@support-ukraine/banner",
+  "version": "1.0.0",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/banner.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "devDependencies": {
+    "rollup": "^2.70.1",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}
