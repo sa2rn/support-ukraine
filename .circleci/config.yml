@@ -1,9 +1,11 @@
 version: 2.1
-jobs:
+workflows:
   publish:
-    docker:
-      - image: cimg/node:16.14.2
-    steps:
-      - checkout
-      - run: 'npm i'
-      - run: 'npm publish'
+    jobs:
+      - publish:
+          docker:
+            - image: cimg/node:16.14.2
+          steps:
+            - checkout
+            - run: 'npm i'
+            - run: 'npm publish'
