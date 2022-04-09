@@ -1,6 +1,7 @@
 import locales from './locales.mjs';
 
 const FALLBACK_LANGUAGE = 'en';
+const SUPPORT_UK_URL = 'https://war.ukraine.ua/support-ukraine/';
 
 export default class SupportUkraine extends HTMLElement {
   constructor() {
@@ -46,7 +47,7 @@ export default class SupportUkraine extends HTMLElement {
           content: '🇺🇦';
         }
       </style>
-      <a class="link" target="__blank" href="https://war.ukraine.ua/support-ukraine/">
+      <a class="link" target="__blank" href="${SUPPORT_UK_URL}">
         ${this.__t('support')}
       </a>
     `;
