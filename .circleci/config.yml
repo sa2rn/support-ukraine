@@ -1,11 +1,10 @@
 version: 2.1
+orbs:
+  node: circleci/node@5.0.2
 workflows:
-  publish:
+  build-and-deploy:
     jobs:
-      - deploy:
-          docker:
-            - image: cimg/node:16.14.2
-          steps:
-            - checkout
-            - run: 'npm i'
-            - run: 'npm publish'
+      - node/run:
+          npm-run: lerna build
+      - node/run:
+          npm-run: lerna publish
