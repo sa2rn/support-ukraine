@@ -5,7 +5,7 @@
     "./packages/*"
   ],
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap --hoist",
     "clean": "lerna clean",
     "build": "lerna run build",
     "publish": "lerna publish from-package -y"
@@ -13,6 +13,7 @@
   "devDependencies": {
     "eslint": "^8.13.0",
     "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-next": "^12.1.4",
     "lerna": "^4.0.0"
   }
 }
