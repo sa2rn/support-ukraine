@@ -27,7 +27,7 @@ export default class SupportUkraine extends HTMLElement {
       <style>
         :host {
           display: block;
-          font-family: var(--support-ua-font-family, #00a8ff);
+          font-family: var(--support-ua-font-family, 'Roboto', sans-serif);
           background-color: var(--support-ua-bg-color, #f5f5f5);
           font-weight: var(--support-ua-font-weight, normal);
           text-align: var(--support-ua-text-align, center);
