@@ -1,17 +1,17 @@
 export default {
   en: {
-    support: 'Support Ukraine',
+    support: '🇺🇦 Support Ukraine',
   },
   ru: {
-    support: 'Поддержи Украину',
+    support: '🇺🇦 Поддержи Украину',
   },
   uk: {
-    support: 'Підтримай Україну',
+    support: '🇺🇦 Підтримай Україну',
   },
   pl: {
-    support: 'Wesprzyj Ukrainę',
+    support: '🇺🇦 Wesprzyj Ukrainę',
   },
   sp: {
-    support: 'Apoya a Ucrania',
+    support: '🇺🇦 Apoya a Ucrania',
   },
 };

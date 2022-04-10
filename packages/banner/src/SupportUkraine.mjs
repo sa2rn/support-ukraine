@@ -34,17 +34,16 @@ export default class SupportUkraine extends HTMLElement {
           padding: var(--support-ua-padding, 15px);
           color: var(--support-ua-color, #00a8ff);
           font-size: var(--support-ua-font-size, 18px);
-        }
-        .link {
-          color: var(--support-ua-link-color, #00a8ff);
-          text-decoration: var(--support-ua-link-text-decoration, none);
           line-height: 1.5;
         }
-        .link:hover {
-          color: var(--support-ua-link-hover-color, #00a8ff);
+        .link {
+          color: var(--support-ua-link-color, #000);
+          text-decoration: var(--support-ua-link-text-decoration, none);
+          transition: color 0.3s;
         }
-        .link::before {
-          content: '🇺🇦';
+        .link:hover {
+          color: var(--support-ua-link-hover-color, #888);
+          text-decoration: var(--support-ua-link-hover-text-decoration, none);
         }
       </style>
       <a class="link" target="__blank" href="${SUPPORT_UK_URL}">
