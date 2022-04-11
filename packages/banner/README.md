@@ -10,7 +10,7 @@ Insert into the head:
 ```
 Insert into the body:
 ```
-<support-ukraine-banner></support-ukraine-banner>
+<support-ukraine></support-ukraine>
 ```
 #### Styling
 To change styles use these variables:
