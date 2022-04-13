@@ -1,5 +1,6 @@
 import { useMemo, useReducer } from 'react';
 import { html } from 'js-beautify';
+import { diff } from 'deep-object-diff';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -31,20 +32,18 @@ export default function useCodeGenerator(initialState) {
   }
 
   const codeString = useMemo(() => {
-    const styleStr = Object.entries(state).map(([name, value]) => `${name}: ${value};`).join('\n');
+    const stateDiff = diff(initialState, state);
+    const styleStr = Object.entries(stateDiff).map(([name, value]) => `${name}: ${value};`).join('\n');
+    const styleCode = styleStr ? `<style>:root {${styleStr}}</style>` : '';
 
     return html(`
       <!-- insert into the head: -->
       <script src="https://unpkg.com/support-ukraine-banner/dist/main.min.js" defer></script>
-      <style>
-        :root {
-          ${styleStr}
-        }
-      </style>
+      ${styleCode}
       <!-- insert into the body: -->
       <support-ukraine></support-ukraine>
     `);
-  }, [state]);
+  }, [state, initialState]);
 
   return { connect, codeString, style: state };
 }
