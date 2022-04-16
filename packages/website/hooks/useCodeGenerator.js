@@ -19,14 +19,14 @@ export default function useCodeGenerator(initialState) {
 
   function connect(name) {
     return {
-      name: name,
+      name,
       value: state[name].endsWith('px') ? parseInt(state[name], 10) : state[name],
       onChange: ({ target }) => {
-         dispatch({
-           type: 'set',
-           name: target.name,
-           value: target.type === 'number' ? `${target.value}px` : target.value,
-          });
+        dispatch({
+          type: 'set',
+          name: target.name,
+          value: target.type === 'number' ? `${target.value}px` : target.value,
+        });
       },
     };
   }

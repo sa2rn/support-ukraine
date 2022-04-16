@@ -1,13 +1,15 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
-import {BaseStyles, ThemeProvider, Text, theme, PageLayout, Box, Label, TextInput, For, FormControl, Heading} from '@primer/react';
+import {
+  BaseStyles, ThemeProvider, Text, theme, PageLayout, Box, Heading,
+} from '@primer/react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { prism } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import Field from '../components/Field';
 import useCodeGenerator from '../hooks/useCodeGenerator';
 
-const INITIALS_STATE = {
-  '--support-ua-font-family': `'Roboto', sans-serif`,
+const DEFAULT_STYLE = {
+  '--support-ua-font-family': '\'Roboto\', sans-serif',
   '--support-ua-bg-color': '#f5f5f5',
   '--support-ua-font-weight': 'normal',
   '--support-ua-text-align': 'center',
@@ -19,7 +21,7 @@ const INITIALS_STATE = {
 
 export default function Home() {
   useEffect(() => import('support-ukraine-banner'), []);
-  const { connect, style, codeString } = useCodeGenerator(INITIALS_STATE);
+  const { connect, style, codeString } = useCodeGenerator(DEFAULT_STYLE);
 
   return (
     <ThemeProvider theme={theme}>
