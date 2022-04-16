@@ -1,4 +1,4 @@
-import { useMemo, useReducer } from 'react';
+import { useCallback, useMemo, useReducer } from 'react';
 import { html } from 'js-beautify';
 import { diff } from 'deep-object-diff';
 
@@ -17,19 +17,17 @@ const reducer = (state, action) => {
 export default function useCodeGenerator(initialState) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  function connect(name) {
-    return {
-      name,
-      value: state[name].endsWith('px') ? parseInt(state[name], 10) : state[name],
-      onChange: ({ target }) => {
-        dispatch({
-          type: 'set',
-          name: target.name,
-          value: target.type === 'number' ? `${target.value}px` : target.value,
-        });
-      },
-    };
-  }
+  const connect = useCallback((name) => ({
+    name,
+    value: state[name].endsWith('px') ? parseInt(state[name], 10) : state[name],
+    onChange: ({ target }) => {
+      dispatch({
+        type: 'set',
+        name: target.name,
+        value: target.type === 'number' ? `${target.value}px` : target.value,
+      });
+    },
+  }), [state]);
 
   const codeString = useMemo(() => {
     const stateDiff = diff(initialState, state);
