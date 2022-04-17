@@ -38,7 +38,7 @@ export default function Home() {
           <Box>
             <Field label="Background color" type="color" {...connect('--support-ua-bg-color')} />
             <Field label="Font size" type="number" trailingVisual="px" {...connect('--support-ua-font-size')} />
-            <Field label="`Padding" type="number" trailingVisual="px" {...connect('--support-ua-padding')} />
+            <Field label="Padding" type="number" trailingVisual="px" {...connect('--support-ua-padding')} />
             <Field label="Link color" type="color" {...connect('--support-ua-link-color')} />
             <Field label="Link hover color" type="color" {...connect('--support-ua-link-hover-color')} />
           </Box>
