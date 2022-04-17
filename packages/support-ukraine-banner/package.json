@@ -1,7 +1,18 @@
 {
   "name": "support-ukraine-banner",
   "version": "1.0.2",
-  "homepage": "",
+  "homepage": "https://sa2rn.github.io/support-ukraine/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sa2rn/support-ukraine.git",
+    "directory": "packages/support-ukraine-banner"
+  },
+  "keywords": [
+    "support",
+    "ukraine",
+    "banner",
+    "nowar"
+  ],
   "license": "ISC",
   "main": "dist/main.js",
   "publishConfig": {
