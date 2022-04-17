@@ -9,10 +9,10 @@ jobs:
       - checkout
       - node/install-packages
       - run:
-          command: npm build
+          command: npm run build
           name: build
       - run:
-          command: npm publish
+          command: npm run publish
           name: publish
 workflows:
   build-and-deploy:
