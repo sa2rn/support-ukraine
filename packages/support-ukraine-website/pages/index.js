@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import {
-  BaseStyles, ThemeProvider, Text, theme, PageLayout, Box, Heading,
+  BaseStyles, ThemeProvider, Text, theme, Box, Heading,
 } from '@primer/react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { prism } from 'react-syntax-highlighter/dist/cjs/styles/prism';
