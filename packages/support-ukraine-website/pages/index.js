@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Head from 'next/head';
 import {
   BaseStyles, ThemeProvider, Text, theme, PageLayout, Box, Heading,
@@ -20,7 +19,6 @@ const DEFAULT_STYLE = {
 };
 
 export default function Home() {
-  useEffect(() => import('support-ukraine-banner'), []);
   const { connect, style, codeString } = useCodeGenerator(DEFAULT_STYLE);
 
   return (
@@ -29,6 +27,7 @@ export default function Home() {
         <Head>
           <title>Support Ukraine banner</title>
           <link rel="icon" href="/favicon.ico" />
+          <script src="https://unpkg.com/support-ukraine-banner/dist/main.min.js" defer></script>
         </Head>
         <PageLayout containerWidth="medium">
           <PageLayout.Header>
