@@ -1,3 +1,3 @@
 module.exports = {
-  basePath: '/support-ukraine-website',
+  basePath: '/support-ukraine',
 };
