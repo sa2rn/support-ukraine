@@ -1,8 +1,10 @@
 import SupportUkraine from './SupportUkraine.mjs';
 
 window.customElements.define('support-ukraine', SupportUkraine);
+window.customElements.define('support-ukraine-banner', SupportUkraine);
+window.customElements.define('support-ua', SupportUkraine);
 
-const WEBSITE = 'https://github.com/sa2rn/support-ukraine/tree/main/packages/banner';
+const WEBSITE = 'https://sa2rn.github.io/support-ukraine/';
 
 if ('console' in window) {
   // eslint-disable-next-line no-console

@@ -39,7 +39,7 @@ export default function useCodeGenerator(initialState) {
       <script src="https://unpkg.com/support-ukraine-banner/dist/main.min.js" defer></script>
       ${styleCode}
       <!-- insert into the body: -->
-      <support-ukraine></support-ukraine>
+      <support-ua></support-ua>
     `);
   }, [state, initialState]);
 
