@@ -18,6 +18,11 @@ jobs:
           command: npm run publish
           name: publish
       - run:
+          command: |
+            git config user.email "$GIT_USER_EMAIL"
+            git config user.name "$GIT_USER_NAME"
+          name: configure git
+      - run:
           command: npm run deploy
           name: deploy
 workflows:
