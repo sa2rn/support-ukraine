@@ -27,6 +27,7 @@ export default function Home() {
         <Head>
           <title>Support Ukraine banner</title>
           <link rel="icon" href="/favicon.ico" />
+          <meta name="google-site-verification" content="h8wqwkV6NH_AtfMflXQ6X3LBljyKO2zHfBW8QJ2rIJI" />
           <script src="https://unpkg.com/support-ukraine-banner/dist/main.min.js" defer></script>
         </Head>
         <PageLayout containerWidth="medium">
