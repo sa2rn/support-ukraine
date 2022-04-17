@@ -1,8 +1,24 @@
 version: 2.1
 orbs:
   node: circleci/node@5.0.2
+jobs:
+  build-and-publish:
+    docker:
+      - image: cimg/node:16.14.2
+    steps:
+      - checkout
+      - node/install-packages
+      - run:
+          command: npm build
+          name: build
+      - run:
+          command: npm publish
+          name: publish
 workflows:
   build-and-deploy:
     jobs:
-      - node/run:
-          npm-run: build
+      - build-and-publish:
+          filters:
+            branches:
+              only:
+                - main
