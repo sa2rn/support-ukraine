@@ -20,7 +20,7 @@ jobs:
 workflows:
   build-and-deploy:
     jobs:
-      - build-and-publish:
+      - build-and-deploy:
           filters:
             branches:
               only:
