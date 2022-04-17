@@ -9,22 +9,22 @@ jobs:
       - checkout
       - node/install-packages
       - run:
-          command: npm run build
           name: build
+          command: npm run build
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run:
-          command: npm run publish
           name: publish
+          command: npm run publish
       - run:
+          name: configure git
           command: |
             git config user.email "$GIT_USER_EMAIL"
             git config user.name "$GIT_USER_NAME"
-          name: configure git
       - run:
-          command: npm run deploy
           name: deploy
+          command: npm run deploy
 workflows:
   build-and-deploy:
     jobs:
