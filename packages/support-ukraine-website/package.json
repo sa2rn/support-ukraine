@@ -5,7 +5,7 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
-    "deploy": "gh-pages -d out -m \"Updates [ci skip]\""
+    "deploy": "touch out/.nojekyll && gh-pages -d out -m \"Updates [ci skip]\""
   },
   "dependencies": {
     "@primer/react": "^35.1.0",
