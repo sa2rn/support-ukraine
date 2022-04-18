@@ -1,5 +1,4 @@
 import locales from './locales.mjs';
-import urls from './urls.mjs';
 
 const NAVIGATOR_LANGUAGE = navigator.language.slice(0, 2);
 const FALLBACK_LANGUAGE = 'en';
@@ -31,11 +30,6 @@ export default class SupportUkraine extends HTMLElement {
     return hasKey ? locales[this.lang][key] : locales[FALLBACK_LANGUAGE][key];
   }
 
-  _getSupportUrl() {
-    const hasKey = urls[this.lang] && urls[this.lang].support;
-    return hasKey ? urls[this.lang].support : urls[FALLBACK_LANGUAGE].support;
-  }
-
   _renderHtml() {
     this._shadowRoot.innerHTML = `
       <style>
@@ -63,7 +57,7 @@ export default class SupportUkraine extends HTMLElement {
           text-decoration: var(--support-ua-link-hover-text-decoration, none);
         }
       </style>
-      <a class="link" target="__blank" href="${this._getSupportUrl()}">
+      <a class="link" target="__blank" href="${this.__t('url')}">
         ${this.__t('support')}
       </a>
     `;
