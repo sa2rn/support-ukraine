@@ -5,21 +5,22 @@ import {
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { prism } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import Field from '../components/Field';
+import Choice from '../components/Choice';
 import useCodeGenerator from '../hooks/useCodeGenerator';
 
-const DEFAULT_STYLE = {
-  '--support-ua-font-family': '\'Roboto\', sans-serif',
-  '--support-ua-bg-color': '#f5f5f5',
-  '--support-ua-font-weight': 'normal',
-  '--support-ua-text-align': 'center',
-  '--support-ua-padding': '15px',
-  '--support-ua-font-size': '18px',
-  '--support-ua-link-color': '#000000',
-  '--support-ua-link-hover-color': '#888888',
-};
+const LANGUAGE_OPTIONS = [
+  { value: '', label: 'Auto detect' },
+  { value: 'uk', label: 'Ukrainian' },
+  { value: 'ru', label: 'Russian' },
+  { value: 'en', label: 'English' },
+  { value: 'de', label: 'German' },
+  { value: 'pl', label: 'Polish' },
+];
 
 export default function Home() {
-  const { connect, style, codeString } = useCodeGenerator(DEFAULT_STYLE);
+  const {
+    connect, codeString, attributes, style,
+  } = useCodeGenerator();
 
   return (
     <ThemeProvider theme={theme}>
@@ -36,15 +37,16 @@ export default function Home() {
           </Heading>
           <Text as="p" sx={{ fontSize: 3 }}>Make your own design</Text>
           <Box>
-            <Field label="Background color" type="color" {...connect('--support-ua-bg-color')} />
-            <Field label="Font size" type="number" trailingVisual="px" {...connect('--support-ua-font-size')} />
-            <Field label="Padding" type="number" trailingVisual="px" {...connect('--support-ua-padding')} />
-            <Field label="Link color" type="color" {...connect('--support-ua-link-color')} />
-            <Field label="Link hover color" type="color" {...connect('--support-ua-link-hover-color')} />
+            <Field label="Background color" type="color" {...connect('style[--support-ua-bg-color]')} />
+            <Field label="Font size" type="number" trailingVisual="px" {...connect('style[--support-ua-font-size]')} />
+            <Field label="Padding" type="number" trailingVisual="px" {...connect('style[--support-ua-padding]')} />
+            <Field label="Link color" type="color" {...connect('style[--support-ua-link-color]')} />
+            <Field label="Link hover color" type="color" {...connect('style[--support-ua-link-hover-color]')} />
+            <Field label="Language" type="text" as={Choice} options={LANGUAGE_OPTIONS} {...connect('attributes[lang]')} />
           </Box>
           <Box mb={3}>
             <Heading sx={{ mb: 3, fontSize: 3 }}>Preview:</Heading>
-            <support-ukraine style={style}></support-ukraine>
+            <support-ukraine style={style} {...attributes}></support-ukraine>
           </Box>
           <Box>
             <Heading sx={{ mb: 3, fontSize: 3 }}>Code:</Heading>
