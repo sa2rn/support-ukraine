@@ -15,6 +15,8 @@ const LANGUAGE_OPTIONS = [
   { value: 'en', label: 'English' },
   { value: 'de', label: 'German' },
   { value: 'pl', label: 'Polish' },
+  { value: 'fr', label: 'French' },
+  { value: 'th', label: 'Thai' },
 ];
 
 export default function Home() {
